@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:podcast/controller/musicDetails_controller.dart';
@@ -8,6 +9,8 @@ MusicDetailsController _musicDetailsController =
 
 
 class GlobalController extends GetxController {
+
+
   RxBool isExpanded = true.obs;
   RxBool isFirstSongPlayed = false.obs;
   AudioPlayer audioPlayer = AudioPlayer();
@@ -29,18 +32,19 @@ class GlobalController extends GetxController {
     audioPlayer.setAudioSource(
       ConcatenatingAudioSource(
         children: [
-          _musicDetailsController.offline.value ? 
-         AudioSource.file(_musicDetailsController.location.value, 
-            tag: MediaItem(
-              id: '1',
-              album: _musicDetailsController
-                  .selectedSongDetails.value.collectionName,
-              title:
-                  _musicDetailsController.selectedSongDetails.value.trackName,
-              artUri: Uri.parse(_musicDetailsController
-                  .selectedSongDetails.value.artworkUrl100),
-            ),
-          ):  AudioSource.uri(
+        //   _musicDetailsController.offline.value ? 
+        //  AudioSource.file(_musicDetailsController.location.value, 
+        //     tag: MediaItem(
+        //       id: '1',
+        //       album: _musicDetailsController
+        //           .selectedSongDetails.value.collectionName,
+        //       title:
+        //           _musicDetailsController.selectedSongDetails.value.trackName,
+        //       artUri: Uri.parse(_musicDetailsController
+        //           .selectedSongDetails.value.artworkUrl100),
+        //     ),
+        //   ):  
+        AudioSource.uri(
             Uri.parse(_musicDetailsController.selectedSongDetails.value.url), tag: MediaItem(
               id: '1',
               album: _musicDetailsController
@@ -59,4 +63,6 @@ class GlobalController extends GetxController {
     currentPlayingUrl.value =
         _musicDetailsController.selectedSongDetails.value.url;
   }
+
+ 
 }

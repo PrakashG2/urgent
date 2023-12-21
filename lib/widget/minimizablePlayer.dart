@@ -33,11 +33,21 @@ class MinimizablePlayer extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Image(
-                    image: NetworkImage(_musicDetailsController
+                  // Image(
+                  //   // image: NetworkImage(_musicDetailsController
+                  //   //     .selectedSongDetails.value.artworkUrl100),
+                    
+                  //   width: 70,
+                  // ),
+                  _musicDetailsController
+                    .hiResImageSelected.value  != "" ?
+                    Image(
+                      image: NetworkImage(_musicDetailsController
                         .selectedSongDetails.value.artworkUrl100),
+                    
                     width: 70,
-                  ),
+                  ) :
+                  Image(image: AssetImage("assets/cd.png")),
                   SizedBox(width: 200,child: Text(
                     _musicDetailsController.selectedSongDetails.value.trackName,maxLines: 1,overflow: TextOverflow.ellipsis,
                     style: const TextStyle(

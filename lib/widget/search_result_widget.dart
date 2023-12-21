@@ -122,8 +122,7 @@ class _SearchResultWidgetState extends State<SearchResultWidget> {
                           borderRadius: BorderRadius.circular(10),
                           child: FadeInImage(
                             fadeOutDuration: Duration(milliseconds: 400),
-                            placeholder: NetworkImage(
-                                "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif"),
+                            placeholder:AssetImage("assets/loading.gif"),
                             image: NetworkImage(result.artworkUrl100),
                             fit: BoxFit.cover,
                           ),

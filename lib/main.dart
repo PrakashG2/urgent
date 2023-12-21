@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:just_audio_background/just_audio_background.dart';
+import 'package:podcast/controller/global_controller.dart';
 import 'package:podcast/controller/moreFromCreator_widget_controller.dart';
 import 'package:podcast/controller/offlineMusic_controller.dart';
 import 'package:podcast/controller/searc_result_widget_controller.dart';

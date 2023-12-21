@@ -108,11 +108,15 @@ void initState() {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6),
-                      child: Image.network(
-                     _musicDetailsController
-                    .hiResImageSelected.value,
-                        fit: BoxFit.fill,
-                      ),
+                      child: _musicDetailsController
+                    .hiResImageSelected.value  != "" ?
+                    Image(
+                      image: NetworkImage(_musicDetailsController
+                        .hiResImageSelected.value),
+                    
+                    width: 70,
+                  ) :
+                  Image(image: AssetImage("assets/cd.png"),fit: BoxFit.fitHeight,),
                     ),
                   ),
                 ),

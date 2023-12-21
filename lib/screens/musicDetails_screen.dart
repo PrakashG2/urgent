@@ -58,8 +58,7 @@ class _MusicDetailsScreenState extends State<MusicDetailsScreen> {
                             ? CircularProgressIndicator()
                             : FadeInImage(
                                 fadeOutDuration: Duration(milliseconds: 400),
-                                placeholder: NetworkImage(
-                                    "https://cencalpsych.org/sites/cencalpsych.org/files/loading.gif"),
+                                placeholder: AssetImage("assets/loading.gif"),
                                 image: NetworkImage(_musicDetailsController
                                     .hiResImagePreview.value),
                                 fit: BoxFit.cover,
@@ -189,8 +188,8 @@ class _MusicDetailsScreenState extends State<MusicDetailsScreen> {
                                                           .url;
                                                   _offlineMusicController
                                                       .dowload();
-                                                  _musicDetailsController
-                                                      .loadPreviewSongDetailsfromOffline();
+                                                  // _musicDetailsController
+                                                  //     .loadPreviewSongDetailsfromOffline();
 
                                                   //                                   _musicDetailsController
                                                   // .loadPreviewSongDetailsfromOffline(_offlineMusicController.filePath.value);
@@ -202,18 +201,24 @@ class _MusicDetailsScreenState extends State<MusicDetailsScreen> {
                                           else
                                             IconButton(
                                                 onPressed: () {
-                                                  _musicDetailsController
-                                                      .offline.value = true;
-                                                  _musicDetailsController
-                                                      .loadPreviewSongDetailsfromOffline();
-                                                  // _musicDetailsController
-                                                  //     .loadselectedsongDetail();
+                                                  // _offlineMusicController
+                                                  //     .loadselectedofflinesongDetail(
+                                                  //         index);
+                                                  // Get.toNamed(RouteName
+                                                  //     .musicPlayerScreen);
+                                                  // // _musicDetailsController
+                                                  // //     .offline.value = true;
+                                                  // // _musicDetailsController
+                                                  // //     .loadPreviewSongDetailsfromOffline();
+                                                  // // _musicDetailsController
+                                                  // //     .loadselectedsongDetail();
 
-                                                  Get.toNamed(RouteName
-                                                      .musicPlayerScreen);
+                                                  // Get.toNamed(RouteName
+                                                  //     .musicPlayerScreen);
                                                 },
                                                 icon: const Icon(
-                                                  Icons.download_done,
+                                                  Icons.play_arrow,
+                                                  color: Colors.red,
                                                   size: 30,
                                                 ))
                                         ],

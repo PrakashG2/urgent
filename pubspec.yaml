@@ -51,6 +51,7 @@ dependencies:
   on_audio_query: ^2.9.0
   audio_video_progress_bar: ^2.0.1
   permission_handler: ^11.1.0
+  internet_connection_checker: ^1.0.0+1
 
   
 
@@ -77,8 +78,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/cd.png
+    - assets/loading.gif
+    - assets/nothing.gif
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
